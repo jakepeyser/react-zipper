@@ -22,4 +22,4 @@ npm run build
 
 Place the `browser/build/index.html` file in a browser and tada! You have a functioning React zipper component.
 
-To adjust the number of zippers, style, and more, update the input props to the `Zipper` component inside the `browser/src/index.js` file and re-build the module.
+To adjust the number of zipper teeth, style (i.e. colors), and more, update the input `Zipper` props inside the `browser/src/index.js` file and re-build the module.
