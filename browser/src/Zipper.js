@@ -1,6 +1,6 @@
 /* eslint max-len: 0 */
 import React from 'react';
-import { TweenLite, TweenMax, TimelineMax } from 'gsap';
+import { TweenMax, TimelineMax } from 'gsap';
 import Draggable from '../../node_modules/gsap/src/uncompressed/utils/Draggable';
 
 const xmlns = 'http://www.w3.org/2000/svg';
@@ -182,8 +182,9 @@ export default class Zipper extends React.Component {
     }
 
     return (
-      <div className="zipper" ref="zipper" style={{ backgroundColor }}>
-        <svg className="zipSVG" x="0px" y="0px" width={`${this.dimensions}px`} height={`${this.dimensions}px`} viewBox={`0 0 ${this.dimensions} ${this.dimensions}`}>
+      <div className="zipper" ref="zipper" style={{ backgroundColor, width: '100%', height: '100%' }}>
+        <svg className="zipSVG" x="0px" y="0px" width={`${this.dimensions}px`} height={`${this.dimensions}px`}
+          viewBox={`0 0 ${this.dimensions} ${this.dimensions}`} style={{ position: 'absolute' }}>
           <defs>
             <marker id="zipToothR" markerWidth="20" markerHeight="8" refX="4" refY="0" markerUnits="userSpaceOnUse" viewBox="0 0 20 8">
               <rect y="0" width="20" height="8" fill={ teethColor } />
