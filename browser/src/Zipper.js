@@ -23,6 +23,7 @@ export default class Zipper extends React.Component {
 
   componentDidMount() {
     const style = this.props.style || defaultStyle;
+    const { startUnzipped } = this.props;
 
     // References to the various elements to layout and animate
     const container = this.refs.zipper;
@@ -113,7 +114,7 @@ export default class Zipper extends React.Component {
     // Position zipper
     TweenMax.set(zipTagSVG, {
       x: leftZipX - 13.5,
-      y: zipToothMaskInitY
+      y: startUnzipped ? maxDragY : zipToothMaskInitY
     })
 
     const createOpenZipperTimeline = (openTeethArr, sign, xAdj) => {
@@ -148,6 +149,10 @@ export default class Zipper extends React.Component {
       zipOpenTimelineL.seek(percentOpen);
       zipOpenTimelineR.seek(percentOpen);
     }
+
+    // Unzip the zipper on mount if designated
+    if (startUnzipped)
+      onDrag.call({ y: maxDragY });
 
     // Make the zipper draggable w/ drop animation
     Draggable.create(zipTagSVG, {

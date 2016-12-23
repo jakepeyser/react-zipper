@@ -10,6 +10,10 @@ const zipperStyle = {
 };
 
 ReactDOM.render(
-  <Zipper numTeeth={25} message="Boo!" style={ zipperStyle }/>,
+  <Zipper
+    numTeeth={25}
+    message="Boo!"
+    startUnzipped={ true }
+    style={ zipperStyle }/>,
   document.getElementById('app')
 );
