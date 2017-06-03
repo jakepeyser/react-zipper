@@ -16,19 +16,19 @@ const config = {
     filename: '[name].js'
   },
   resolve: {
-    root: path.resolve(__dirname),
-    extensions: ['', '.js'],
+    modules: ['node_modules'],
+    extensions: ['.js'],
     alias: {
       'TweenLite': 'gsap/src/uncompressed/TweenLite.js',
       'CSSPlugin': 'gsap/src/uncompressed/plugins/CSSPlugin.js'
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
   }

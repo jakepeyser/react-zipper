@@ -1,3 +1,4 @@
 node_modules
+browser/build/main.js
 .DS_STORE
 *.log
